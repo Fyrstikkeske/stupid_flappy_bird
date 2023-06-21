@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhjsv5obmrw15"]
+
+[ext_resource type="Texture2D" uid="uid://bgynvu3hjqvv" path="res://pipe1.png" id="1_4i7ay"]
+[ext_resource type="Texture2D" uid="uid://b3pnb3jxy412u" path="res://pipe2.png" id="2_aruji"]
+[ext_resource type="Script" path="res://pipe.cs" id="2_jotr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pkgi"]
+size = Vector2(16.6517, 151.746)
+
+[node name="pipe_top" type="Sprite2D"]
+position = Vector2(-5, 205)
+rotation = 3.14159
+scale = Vector2(5.585, 5.585)
+texture = ExtResource("1_4i7ay")
+script = ExtResource("2_jotr8")
+
+[node name="top_pipe_part" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = ExtResource("2_aruji")
+
+[node name="top_pipe_part2" type="Sprite2D" parent="top_pipe_part"]
+position = Vector2(0, 32)
+texture = ExtResource("2_aruji")
+
+[node name="top_pipe_part3" type="Sprite2D" parent="top_pipe_part"]
+position = Vector2(-2.38419e-07, 64)
+texture = ExtResource("2_aruji")
+
+[node name="top_pipe_part4" type="Sprite2D" parent="top_pipe_part"]
+position = Vector2(0, 96)
+texture = ExtResource("2_aruji")
+
+[node name="Area2D" type="Area2D" parent="top_pipe_part"]
+position = Vector2(-2.38419e-07, -32)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_pipe_part/Area2D"]
+position = Vector2(-1.96956, 67.6365)
+shape = SubResource("RectangleShape2D_6pkgi")
+
+[node name="pipe_bottom" type="Sprite2D" parent="."]
+position = Vector2(-4.11818, -68.5766)
+rotation = -3.14159
+texture = ExtResource("1_4i7ay")
+
+[node name="bottom_pipe_part" type="Sprite2D" parent="pipe_bottom"]
+position = Vector2(0, 32)
+texture = ExtResource("2_aruji")
+
+[node name="bottom_pipe_part" type="Sprite2D" parent="pipe_bottom/bottom_pipe_part"]
+position = Vector2(0, 32)
+texture = ExtResource("2_aruji")
+
+[node name="bottom_pipe_part2" type="Sprite2D" parent="pipe_bottom/bottom_pipe_part"]
+position = Vector2(-2.38419e-07, 64)
+texture = ExtResource("2_aruji")
+
+[node name="bottom_pipe_part3" type="Sprite2D" parent="pipe_bottom/bottom_pipe_part"]
+position = Vector2(0, 96)
+texture = ExtResource("2_aruji")
+
+[node name="Area2D" type="Area2D" parent="pipe_bottom/bottom_pipe_part"]
+position = Vector2(-2.38419e-07, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pipe_bottom/bottom_pipe_part/Area2D"]
+position = Vector2(-2.41719, 68.6661)
+shape = SubResource("RectangleShape2D_6pkgi")

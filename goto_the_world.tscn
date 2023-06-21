@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0y6g25ocn7m3"]
+
+[ext_resource type="Script" path="res://goto_the_world.cs" id="1_fq2f2"]
+
+[node name="filler" type="Node"]
+script = ExtResource("1_fq2f2")
